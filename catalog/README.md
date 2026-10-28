@@ -1,8 +1,8 @@
-# 🚀 Комплексная задача: Каталог постов (React Hook Form + Zod + TanStack Query)
+#  Комплексная задача: Каталог постов (React Hook Form + Zod + TanStack Query)
 
 Готовое приложение для запуска в **VS Code**.
 
-## 🛠️ Как запустить
+##  Как запустить
 
 1. Открой папку проекта в VS Code.
 2. Открой терминал (`Ctrl + ~` или `Terminal -> New Terminal`).
@@ -18,7 +18,7 @@
 
 ---
 
-## 📂 Архитектура проекта
+##  Архитектура проекта
 - `src/api/posts.js` — все запросы к API JSONPlaceholder (`getPosts`, `getPost`, `createPost`, `updatePost`, `deletePost`).
 - `src/schemas/postSchema.js` — декларативная схема валидации Zod (наименования, текст, ID, статус, дата публикации с проверкой через `.refine()`, массив тегов).
 - `src/components/PostForm.jsx` — универсальная форма для создания и редактирования с поддержкой `useFieldArray` и обработки ошибок сервера через `setError`.
