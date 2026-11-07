@@ -1,6 +1,8 @@
-# MovieFinder — локальная библиотека фильмов
+## MovieFinder - локальная библиотека фильмов
 
-MovieFinder — одностраничное приложение для ведения личной коллекции фильмов. Каталог встроен в проект, поэтому поиск и работа с фильмами не зависят от внешних API и доступны без подключения к интернету.
+<img width="1920" height="1080" alt="Code_ImH614dgv3" src="https://github.com/user-attachments/assets/e87c432a-6230-492e-8fd2-448ecec3e9a0" />
+
+MovieFinder - одностраничное приложение для ведения личной коллекции фильмов. Каталог встроен в проект, поэтому поиск и работа с фильмами не зависят от внешних API и доступны без подключения к интернету.
 
 ## Технологии
 
@@ -42,3 +44,10 @@ npm run dev
 ```bash
 npm run build
 ```
+## Работа программы 
+<img width="1920" height="1080" alt="Code_Z4wKgoIvgl" src="https://github.com/user-attachments/assets/988978a1-077d-45c9-a9a1-084e20bb9e07" />
+<img width="1920" height="1080" alt="Code_XqN9Ny8JuU" src="https://github.com/user-attachments/assets/227e7847-9e1e-4c96-96bb-284db14078fd" />
+<img width="1920" height="1080" alt="Code_nBDJNLoB65" src="https://github.com/user-attachments/assets/405b6d40-f67a-43f2-a743-3d444d9c345e" />
+<img width="1920" height="1080" alt="Code_ImH614dgv3" src="https://github.com/user-attachments/assets/4a328992-b004-4606-b8d8-55fe46faf35d" />
+<img width="1920" height="1080" alt="Code_8EcXYmEWFg" src="https://github.com/user-attachments/assets/3ccff433-7c9d-422b-8fb7-a0ca72a7f5e0" />
+
