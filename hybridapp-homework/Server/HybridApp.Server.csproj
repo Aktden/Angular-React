@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>HybridApp.Server</RootNamespace>
+  </PropertyGroup>
+
+  <!-- Frontend builds are included in the published ASP.NET Core application. -->
+  <Target Name="PublishReact" AfterTargets="ComputeFilesToPublish">
+    <Exec WorkingDirectory="$(MSBuildProjectDirectory)/../ClientApp/react" Command="npm install --no-audit --no-fund" />
+    <Exec WorkingDirectory="$(MSBuildProjectDirectory)/../ClientApp/react" Command="npm run build" />
+    <ItemGroup>
+      <ResolvedFileToPublish Include="$(MSBuildProjectDirectory)/../ClientApp/react/dist/**/*">
+        <RelativePath>wwwroot/react/%(RecursiveDir)%(Filename)%(Extension)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+
+  <Target Name="PublishAngular" AfterTargets="ComputeFilesToPublish">
+    <Exec WorkingDirectory="$(MSBuildProjectDirectory)/../ClientApp/angular" Command="npm install --no-audit --no-fund" />
+    <Exec WorkingDirectory="$(MSBuildProjectDirectory)/../ClientApp/angular" Command="npm run build" />
+    <ItemGroup>
+      <ResolvedFileToPublish Include="$(MSBuildProjectDirectory)/../ClientApp/angular/dist/angular/browser/**/*">
+        <RelativePath>wwwroot/angular/%(RecursiveDir)%(Filename)%(Extension)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+</Project>

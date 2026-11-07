@@ -1,0 +1,48 @@
+:host { display: block; min-height: 100vh; }
+.page-shell { width: min(100% - 40px, 1040px); margin: 0 auto; padding: 28px 0 22px; }
+.topbar, .brand, .route-pills, .card-heading, .button-row, .page-footer { display: flex; align-items: center; }
+.topbar { justify-content: space-between; border-bottom: 1px solid #26314b; padding-bottom: 22px; }
+.brand { gap: 11px; text-decoration: none; font-family: Manrope, sans-serif; font-size: 17px; font-weight: 800; letter-spacing: -.04em; }
+.brand-mark { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 11px; color: #07111f; background: #f2c98b; }
+.client-label { color: #9aa7c2; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+.hero { max-width: 700px; padding: 72px 0 44px; }
+.eyebrow { margin: 0 0 14px; color: #f2c98b; font-size: 11px; font-weight: 700; letter-spacing: .16em; }
+h1, h2 { font-family: Manrope, sans-serif; }
+h1 { margin: 0; font-size: clamp(42px, 7vw, 76px); line-height: 1.04; letter-spacing: -.065em; }
+h1 span { color: #f2c98b; }
+.hero-copy { max-width: 600px; margin: 22px 0 25px; color: #aab5cc; font-size: 16px; line-height: 1.7; }
+.route-pills { flex-wrap: wrap; gap: 9px; }
+.route-pills span, .route-pills a { border: 1px solid #34415d; border-radius: 999px; padding: 8px 12px; color: #c4cee2; font-size: 12px; text-decoration: none; }
+.route-pills a { border-color: #927a55; color: #f2d8a9; }
+.auth-card { max-width: 620px; padding: 28px; border: 1px solid #2c3956; border-radius: 20px; background: linear-gradient(145deg, #151f35, #111a2d); box-shadow: 0 22px 70px #03071266; }
+.card-heading { justify-content: space-between; margin-bottom: 24px; }
+.card-heading .eyebrow { margin-bottom: 7px; }
+h2 { margin: 0; font-size: 21px; letter-spacing: -.04em; }
+.status-dot { width: 10px; height: 10px; border-radius: 50%; background: #69758d; box-shadow: 0 0 0 5px #69758d22; }
+.status-dot.is-online { background: #75e1b8; box-shadow: 0 0 0 5px #75e1b822; }
+.login-form { display: grid; gap: 16px; }
+.login-form label { display: grid; gap: 8px; color: #cbd5e7; font-size: 13px; }
+.login-form input { width: 100%; padding: 13px 14px; border: 1px solid #354360; border-radius: 10px; outline: none; color: #f3f6ff; background: #0c1426; }
+.login-form input:focus { border-color: #e4c184; box-shadow: 0 0 0 3px #e4c18422; }
+.button { border: 0; border-radius: 10px; padding: 12px 17px; cursor: pointer; font: inherit; font-weight: 700; transition: transform .15s ease, opacity .15s ease; }
+.button:hover:not(:disabled) { transform: translateY(-1px); }
+.button:disabled { cursor: wait; opacity: .6; }
+.button-primary { color: #1b170e; background: #f0d09a; }
+.button-secondary { border: 1px solid #40506f; color: #dce6f8; background: #1b2942; }
+.submit-button { margin-top: 3px; }
+.form-hint, .muted { color: #93a1bb; font-size: 12px; }
+.form-hint { margin: 0; }
+code { color: #f2d8a9; }
+.error-message { margin: 0; color: #ff9b9b; font-size: 13px; }
+.signed-in { display: grid; gap: 10px; }
+.signed-in .muted { margin: 0; }
+.user-name { font-family: Manrope, sans-serif; font-size: 28px; }
+.api-message { margin: 8px 0 12px; padding: 14px; border-left: 2px solid #e4c184; border-radius: 0 9px 9px 0; color: #c8d5e9; background: #0d172a; font-size: 13px; line-height: 1.6; }
+.button-row { flex-wrap: wrap; gap: 10px; }
+.page-footer { justify-content: space-between; gap: 16px; margin-top: 50px; padding-top: 18px; border-top: 1px solid #26314b; color: #7786a3; font-size: 11px; }
+@media (max-width: 600px) {
+  .page-shell { width: min(100% - 28px, 1040px); padding-top: 18px; }
+  .hero { padding-top: 54px; }
+  .auth-card { padding: 22px 18px; }
+  .page-footer { align-items: flex-start; flex-direction: column; }
+}
