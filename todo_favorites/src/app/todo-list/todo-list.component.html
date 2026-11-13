@@ -1,0 +1,72 @@
+<section class="todo-section">
+  <div class="section-heading">
+    <h2>Список задач</h2>
+    <span class="task-count">{{ todos().length }}</span>
+  </div>
+
+  <form class="add-form" (ngSubmit)="addTodo()">
+    <label class="visually-hidden" for="newTodoTitle">Название новой задачи</label>
+    <input
+      id="newTodoTitle"
+      name="newTodoTitle"
+      type="text"
+      [(ngModel)]="newTodoTitle"
+      placeholder="Введите задачу"
+      maxlength="100"
+      autocomplete="off"
+    >
+    <button type="submit" [disabled]="!newTodoTitle.trim()">Добавить</button>
+  </form>
+
+  <div class="todo-list">
+    @for (todo of todos(); track todo.id) {
+      <article class="todo-item" [class.completed]="todo.completed">
+        <button
+          type="button"
+          class="complete-button"
+          [class.checked]="todo.completed"
+          [attr.aria-label]="todo.completed ? 'Вернуть задачу в работу' : 'Отметить задачу выполненной'"
+          [attr.aria-pressed]="todo.completed"
+          (click)="toggleCompleted(todo.id)"
+        >
+          @if (todo.completed) {
+            <span aria-hidden="true">✓</span>
+          }
+        </button>
+
+        <div class="todo-content">
+          <span class="todo-title">{{ todo.title }}</span>
+          <span class="todo-status">{{ todo.completed ? 'Выполнено' : 'В процессе' }}</span>
+        </div>
+
+        <div class="todo-actions">
+          <button
+            type="button"
+            class="icon-button favorite-button"
+            [class.filled]="favorites.isFavorite(todo.id)"
+            [attr.aria-label]="favorites.isFavorite(todo.id) ? 'Убрать из избранного' : 'Добавить в избранное'"
+            [attr.aria-pressed]="favorites.isFavorite(todo.id)"
+            [title]="favorites.isFavorite(todo.id) ? 'Убрать из избранного' : 'В избранное'"
+            (click)="favorites.toggle(todo.id)"
+          >
+            {{ favorites.isFavorite(todo.id) ? '★' : '☆' }}
+          </button>
+          <button
+            type="button"
+            class="icon-button delete-button"
+            [attr.aria-label]="'Удалить задачу: ' + todo.title"
+            title="Удалить задачу"
+            (click)="deleteTodo(todo.id)"
+          >
+            ×
+          </button>
+        </div>
+      </article>
+    } @empty {
+      <div class="empty-state">
+        <strong>Список пока пуст</strong>
+        <span>Добавьте первую задачу</span>
+      </div>
+    }
+  </div>
+</section>

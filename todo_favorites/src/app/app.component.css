@@ -1,0 +1,59 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.page-shell {
+  min-height: 100vh;
+  padding: 48px 20px 32px;
+}
+
+.main-container {
+  width: min(100%, 680px);
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 28px;
+}
+
+.page-header h1 {
+  margin: 0;
+  color: #252a34;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+}
+
+.page-header p {
+  margin: 7px 0 0;
+  color: #777f8c;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.workspace {
+  display: grid;
+  gap: 14px;
+}
+
+.page-footer {
+  margin-top: 22px;
+  color: #9aa1ab;
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 520px) {
+  .page-shell {
+    padding: 30px 14px 24px;
+  }
+
+  .page-header {
+    margin-bottom: 22px;
+  }
+
+  .page-header h1 {
+    font-size: 26px;
+  }
+}
