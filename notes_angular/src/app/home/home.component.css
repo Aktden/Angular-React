@@ -1,0 +1,20 @@
+:host { display: block; }
+.home-page { max-width: 820px; margin: 18px auto 0; }
+.home-intro { padding: 12px 0 34px; }
+.eyebrow { margin: 0 0 12px; color: #666; font-size: 12px; font-weight: 700; letter-spacing: .08em; }
+h1 { margin: 0 0 16px; color: #222; font-size: clamp(34px, 5vw, 46px); line-height: 1.15; letter-spacing: -.035em; }
+.home-description { max-width: 590px; margin: 0; color: #666; font-size: 16px; line-height: 1.65; }
+.home-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.button { min-height: 42px; display: inline-flex; align-items: center; justify-content: center; padding: 0 16px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; font-weight: 600; text-decoration: none; transition: background .15s, border-color .15s; }
+.button-primary { border-color: #2563eb; color: #fff; background: #2563eb; }
+.button-primary:hover { border-color: #1d4ed8; background: #1d4ed8; }
+.button-secondary { color: #333; background: #fff; }
+.button-secondary:hover { background: #f8fafc; }
+.quick-info { padding-top: 25px; border-top: 1px solid #e5e7eb; }
+.quick-info h2 { margin: 0 0 16px; color: #333; font-size: 18px; }
+.quick-info-list { display: grid; gap: 12px; }
+.quick-info-item { display: flex; align-items: flex-start; gap: 12px; }
+.quick-info-item > span { width: 25px; height: 25px; flex: 0 0 25px; display: grid; place-items: center; border: 1px solid #d1d5db; border-radius: 50%; color: #555; font-size: 12px; }
+.quick-info-item p { margin: 2px 0 0; color: #666; font-size: 14px; line-height: 1.5; }
+.quick-info-item strong { color: #333; }
+@media (max-width: 600px) { .home-page { margin-top: 4px; } .home-intro { padding-bottom: 28px; } h1 { font-size: 34px; } .home-description { font-size: 14px; } }

@@ -1,0 +1,42 @@
+<section class="section-heading">
+  <div>
+    <p>Все важные мысли и дела — в одном месте.</p>
+  </div>
+  <a class="create-link" routerLink="/create">＋ Новая заметка</a>
+</section>
+
+@if (isLoading) {
+  <div class="state-card"><span class="loader"></span><p>Загрузка заметок...</p></div>
+}
+
+@if (errorMessage) {
+  <div class="message message-error" role="alert">
+    <span>{{ errorMessage }}</span>
+    <button type="button" class="retry-button" (click)="loadNotes()">Повторить</button>
+  </div>
+}
+
+@if (!isLoading && !errorMessage) {
+  <section class="notes-grid" aria-label="Список заметок">
+    @for (note of notes; track note.id) {
+      <article class="note-card">
+        <div class="note-card-top"><span class="note-dot"></span><span class="note-number">ЗАМЕТКА #{{ note.id }}</span></div>
+        <h2>{{ note.title }}</h2>
+        <p class="note-text">{{ note.text }}</p>
+        <div class="note-card-bottom">
+          <span>Личная запись</span>
+          <button type="button" class="delete-button" [disabled]="deletingId === note.id" (click)="remove(note.id)">
+            {{ deletingId === note.id ? 'Удаление...' : 'Удалить' }}
+          </button>
+        </div>
+      </article>
+    } @empty {
+      <div class="empty-state">
+        <div class="empty-icon">✎</div>
+        <h2>Пока здесь пусто</h2>
+        <p>Создайте первую заметку — она появится на этой странице.</p>
+        <a class="create-link" routerLink="/create">Создать заметку</a>
+      </div>
+    }
+  </section>
+}

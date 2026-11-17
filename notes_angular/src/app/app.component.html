@@ -1,0 +1,18 @@
+<div class="app-shell">
+  <header class="topbar">
+    <nav class="main-nav" aria-label="Главная навигация">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Главная</a>
+      <a routerLink="/notes" routerLinkActive="active">Заметки</a>
+      <a class="nav-create" routerLink="/create" routerLinkActive="active">+ Создать</a>
+    </nav>
+  </header>
+
+  <main class="page-content">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer class="footer">
+    <span>Мини-заметки</span>
+    <span>Ваши мысли — в порядке</span>
+  </footer>
+</div>

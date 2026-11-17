@@ -1,0 +1,43 @@
+<section class="form-page">
+  <div class="form-intro">
+    <h1>Создать заметку</h1>
+    <p>Заполните заголовок и текст. После сохранения заметка появится в общем списке.</p>
+    <a class="back-link" routerLink="/notes">← К списку заметок</a>
+  </div>
+
+  <form class="note-form" [formGroup]="noteForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="field-group">
+      <label for="title">Заголовок</label>
+      <input id="title" type="text" formControlName="title" placeholder="Например, Покупки на неделю" maxlength="100">
+      @if (title?.invalid && title?.touched) {
+        <div class="field-error">
+          @if (title?.errors?.['required']) { <span>Введите заголовок</span> }
+          @if (title?.errors?.['minlength']) { <span>Минимум 3 символа</span> }
+        </div>
+      }
+    </div>
+
+    <div class="field-group">
+      <label for="text">Текст заметки</label>
+      <textarea id="text" rows="7" formControlName="text" placeholder="Напишите здесь всё, что нужно запомнить..."></textarea>
+      @if (text?.invalid && text?.touched) {
+        <div class="field-error">
+          @if (text?.errors?.['required']) { <span>Введите текст заметки</span> }
+          @if (text?.errors?.['minlength']) { <span>Минимум 5 символов</span> }
+        </div>
+      }
+    </div>
+
+    @if (successMessage) {
+      <div class="form-message success" role="status">{{ successMessage }}. Откройте список заметок, чтобы увидеть запись.</div>
+    }
+    @if (errorMessage) {
+      <div class="form-message error" role="alert">{{ errorMessage }}. Проверьте подключение к серверу.</div>
+    }
+
+    <button class="submit-button" type="submit" [disabled]="noteForm.invalid || isSubmitting">
+      {{ isSubmitting ? 'Сохранение...' : 'Сохранить заметку' }}
+    </button>
+    <p class="form-footnote">Оба поля обязательны для заполнения</p>
+  </form>
+</section>
