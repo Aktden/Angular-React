@@ -1,6 +1,8 @@
 # Мини-заметки - Angular
 
+<img width="1920" height="1080" alt="Code_oZIH1r8x9S" src="https://github.com/user-attachments/assets/74148cd7-f16f-41f6-8a57-91ce3ebd1ab4" />
 
+<img width="1920" height="1080" alt="chrome_WMYllWNPpN" src="https://github.com/user-attachments/assets/3142b104-5512-4635-abd9-b4feb6380b90" />
 
 ## Что реализовано
 
